@@ -1,5 +1,6 @@
+package clases;
+
 import java.util.LinkedList;
-import java.util.Objects;
 
 public class ContaManager {
     private LinkedList<Conta> contas;
@@ -14,8 +15,14 @@ public class ContaManager {
         //escreve as contas no ficheiro contas.txt
     }
 
-    public boolean contaExist(String nome){
-
+    public boolean contaExist(String nome) {
+        //verifica se uma conta existe
+        for (var conta : contas) {
+            if (conta.nomeValid(nome)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public boolean login(String nome, String password){
@@ -28,7 +35,6 @@ public class ContaManager {
                 return false;
             }
         }
-
-        throw new IllegalArgumentException("Conta não encontrada!");
+        throw new IllegalArgumentException("clases.Conta não encontrada!");
     }
 }
