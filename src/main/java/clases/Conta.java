@@ -14,6 +14,9 @@ public class Conta {
     public String getNome() {
         return nome;
     }
+    public String getPassword() {
+        return password;
+    }
 
     public Boolean nomeValid(String nomeToVerify) {
         return nomeToVerify.compareTo(nome) == 0;
@@ -22,4 +25,5 @@ public class Conta {
     public Boolean passwordValid(String passToVerify) {
         return passToVerify.compareTo(password) == 0;
     }
+
 }
